@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KC_M5_Project_Two</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email_or_username">Email or Username</string>
+    <string name="password">Password</string>
+    <string name="data_grid">Weight Tracking</string>
+    <string name="notification_info">Turn on notifications to stay updated on your weight goals.</string>
+    <string name="sms_notifications">SMS Notifications</string>
+    <string name="push_notifications">Push Notifications</string>
+</resources>

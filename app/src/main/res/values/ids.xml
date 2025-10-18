@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvHelper" type="id" />
+    <item name="btnCreateAccount" type="id" />
+    <item name="btnSignIn" type="id" />
+    <item name="tilPassword" type="id" />
+    <item name="etPassword" type="id" />
+    <item name="tilUsername" type="id" />
+    <item name="etUsername" type="id" />
+    <item name="tvTitle" type="id" />
+    <item name="topAppBar" type="id" />
+    <item name="tvInfo" type="id" />
+    <item name="btnCheckRequest" type="id" />
+    <item name="tvStatus" type="id" />
+    <item name="cardPreview" type="id" />
+    <item name="tvPreviewTitle" type="id" />
+    <item name="tvPreviewMsg" type="id" />
+    <item name="rowInfo" type="id" />
+</resources>
