@@ -16,8 +16,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KC_M5_Project_Two"
-        tools:targetApi="32" >
+        android:theme="@style/Theme.weight_tracker"
+        tools:targetApi="29">
 
         <activity android:name=".MainActivity"
             android:exported="true">
@@ -28,7 +28,9 @@
         </activity>
         <activity android:name=".WeightTrackingActivity" />
         <activity android:name=".NotificationActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".SettingsActivity" />
 
-        </application>
+    </application>
 
 </manifest>

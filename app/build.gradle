@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.kc_weight_tracker"
-        minSdk 34
-        targetSdk 35
+        minSdk 29
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -35,4 +35,5 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    implementation libs.gridlayout
 }

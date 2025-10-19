@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.KC_M5_Project_Two" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.weight_tracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Your brand colors -->
         <item name="colorPrimary">@color/blue_600</item>
         <item name="colorPrimaryVariant">@color/blue_800</item>

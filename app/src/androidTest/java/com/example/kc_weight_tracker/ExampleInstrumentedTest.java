@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.kc_m5_project_two", appContext.getPackageName());
+        assertEquals("com.example.weight_tracker", appContext.getPackageName());
     }
 }

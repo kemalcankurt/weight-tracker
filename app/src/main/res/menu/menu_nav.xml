@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_login" android:title="Login" />
-    <item android:id="@+id/menu_weight" android:title="Weight History" />
-    <item android:id="@+id/menu_notify" android:title="Notifications" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/menu_weight"
+        android:title="Weight History" />
+    <item
+        android:id="@+id/menu_notify"
+        android:title="Notifications" />
+    <item
+        android:id="@+id/menu_settings"
+        android:title="Settings" />
+    <item
+        android:id="@+id/menu_logout"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="Logout"
+        app:showAsAction="never" />
 </menu>

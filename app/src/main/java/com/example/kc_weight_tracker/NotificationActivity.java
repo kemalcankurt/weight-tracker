@@ -1,35 +1,27 @@
 package com.example.kc_weight_tracker;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.kc_weight_tracker.utility.NavUtil;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.switchmaterial.SwitchMaterial;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class NotificationActivity extends AppCompatActivity {
 
-    private SwitchMaterial swSms, swPush;
-
-    private final ActivityResultLauncher<String> requestSmsPermission =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
-                swSms.setChecked(granted);
-                Toast.makeText(this, "SMS: " + (granted ? "granted" : "denied"), Toast.LENGTH_SHORT).show();
-            });
-
-    private final ActivityResultLauncher<String> requestPushPermission =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
-                swPush.setChecked(granted);
-                Toast.makeText(this, "Push: " + (granted ? "granted" : "denied"), Toast.LENGTH_SHORT).show();
-            });
+    private TextView tvNotificationHistory;
+    private List<String> notificationLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,31 +31,48 @@ public class NotificationActivity extends AppCompatActivity {
         // Toolbar
         MaterialToolbar bar = findViewById(R.id.topAppBar);
         setSupportActionBar(bar);
-        if (getSupportActionBar() != null) getSupportActionBar().setTitle("Notifications");
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("Notification History");
+        }
 
-        swSms = findViewById(R.id.swSms);
-        swPush = findViewById(R.id.swPush);
+        tvNotificationHistory = findViewById(R.id.tvNotificationHistory);
 
-        // Initialize toggle states
-        swSms.setChecked(hasSmsPermission());
-        swPush.setChecked(hasPushPermission());
-
-        // Toggle listeners
-        // reference: https://developer.android.com/develop/ui/views/components/togglebutton
-        swSms.setOnCheckedChangeListener((b, checked) -> {
-            if (checked && !hasSmsPermission()) {
-                requestSmsPermission.launch(Manifest.permission.SEND_SMS);
-            }
-        });
-
-        swPush.setOnCheckedChangeListener((b, checked) -> {
-            if (checked && !hasPushPermission()) {
-                requestPushPermission.launch(Manifest.permission.POST_NOTIFICATIONS);
-            }
-        });
+        // Initialize notification log
+        notificationLog = new ArrayList<>();
+        loadNotificationHistory();
+        updateNotificationDisplay();
     }
 
-    /// reference: [...](https://developer.android.com/develop/ui/views/components/menus#java)
+    private void loadNotificationHistory() {
+        // In future, notifications would load from a database
+        // However, such implementation is out of scope for now
+        // Yet, for demo purposes, we'll add some sample notifications
+        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy HH:mm", Locale.getDefault());
+
+        notificationLog.add(sdf.format(new Date()) + " - Daily weight reminder sent");
+        notificationLog.add(
+                sdf.format(new Date(System.currentTimeMillis() - 86400000)) + " - Goal progress notification sent");
+        notificationLog.add(
+                sdf.format(new Date(System.currentTimeMillis() - 172800000)) + " - Weekly summary notification sent");
+    }
+
+    private void updateNotificationDisplay() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Recent Notifications:\n\n");
+
+        for (String notification : notificationLog) {
+            sb.append("• ").append(notification).append("\n");
+        }
+
+        if (notificationLog.isEmpty()) {
+            sb.append("No notifications sent yet.\n\n");
+            sb.append("Enable notifications in Settings to start receiving reminders!");
+        }
+
+        tvNotificationHistory.setText(sb.toString());
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_nav, menu);
@@ -71,17 +80,18 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
         NavUtil.go(this, item.getItemId());
         return true;
     }
 
-
-    private boolean hasSmsPermission() {
-        return ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED;
-    }
-
-    private boolean hasPushPermission() {
-        return ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED;
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
