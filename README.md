@@ -1,5 +1,3 @@
-readme - weight tracking
-
 # Weight Tracker App
 
 A simple Android weight tracking application built for CS-360 Mobile Architect & Programming course.
