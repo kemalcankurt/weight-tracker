@@ -75,6 +75,46 @@ This component showcases advanced Android development concepts including custom 
 - [SQLite Documentation](https://www.sqlite.org/docs.html) - Database implementation
 - [Android Permissions Guide](https://developer.android.com/guide/topics/permissions/overview) - Runtime permissions
 
+## Screenshots
+
+### Login & Registration
+
+![Login Screen](screens/login_screen.jpg)
+_Secure user authentication with account creation and login_
+
+### Home Dashboard
+
+![Home Screen](screens/home_screen.jpg)
+_Main dashboard with quick actions, goal progress, and streak tracking_
+
+![Home Screen with Menu](screens/app_menu.jpg)
+_Home screen with navigation menu open_
+
+### Weight Tracking
+
+![Weight Tracking](screens/weight_history.jpg)
+_Weight logging interface with date picker and decimal input support_
+
+### Goal Management
+
+![Set Goal](screens/set_goal.jpg)
+_Goal setting with BMI calculation and progress visualization_
+
+### Weight History
+
+![Weight History](screens/weight_history.jpg)
+_Historical weight data with trend analysis and streak information_
+
+### Settings
+
+![Settings](screens/settings.jpg)
+_User preferences including height, notifications, and account management_
+
+### Notification History
+
+![Notification History](screens/notifications_history.jpg)
+_Notification tracking and history display_
+
 ## Technical Requirements
 
 - Android API 29+ (Android 10+)
