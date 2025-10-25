@@ -79,40 +79,48 @@ This component showcases advanced Android development concepts including custom 
 
 ### Login & Registration
 
-![Login Screen](screens/login_screen.jpg)
+<img src="screens/login_screen.jpg" width="300" alt="Login Screen">
+
 _Secure user authentication with account creation and login_
 
 ### Home Dashboard
 
-![Home Screen](screens/home_screen.jpg)
+<img src="screens/home_screen.jpg" width="300" alt="Home Screen">
+
 _Main dashboard with quick actions, goal progress, and streak tracking_
 
-![Home Screen with Menu](screens/app_menu.jpg)
+<img src="screens/app_menu.jpg" width="300" alt="Home Screen with Menu">
+
 _Home screen with navigation menu open_
 
 ### Weight Tracking
 
-![Weight Tracking](screens/weight_history.jpg)
+<img src="screens/weight_history.jpg" width="300" alt="Weight Tracking">
+
 _Weight logging interface with date picker and decimal input support_
 
 ### Goal Management
 
-![Set Goal](screens/set_goal.jpg)
+<img src="screens/set_goal.jpg" width="300" alt="Set Goal">
+
 _Goal setting with BMI calculation and progress visualization_
 
 ### Weight History
 
-![Weight History](screens/weight_history.jpg)
+<img src="screens/weight_history.jpg" width="300" alt="Weight History">
+
 _Historical weight data with trend analysis and streak information_
 
 ### Settings
 
-![Settings](screens/settings.jpg)
+<img src="screens/settings.jpg" width="300" alt="Settings">
+
 _User preferences including height, notifications, and account management_
 
 ### Notification History
 
-![Notification History](screens/notifications_history.jpg)
+<img src="screens/notifications_history.jpg" width="300" alt="Notification History">
+
 _Notification tracking and history display_
 
 ## Technical Requirements
